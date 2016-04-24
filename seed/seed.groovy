@@ -37,7 +37,10 @@ freeStyleJob("${SEED_PROJECT}-${SEED_BRANCH}-build") {
   }
 
   steps {
-    gradle 'clean build'
+    gradle {
+      tasks('clean build')
+      makeExecutable(true)
+    }
   }
 
   publishers {
