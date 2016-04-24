@@ -28,7 +28,7 @@ freeStyleJob("${SEED_PROJECT}-${SEED_BRANCH}-build") {
   scm {
     git {
       remote {
-        url "https://www.github.com/mattfirtion/seed-demo.git"
+        url "https://www.github.com/mattfirtion/seed-sample.git"
         branch "origin/${BRANCH}"
       }
       wipeOutWorkspace()

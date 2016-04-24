@@ -22,11 +22,12 @@ Vagrant.configure(2) do |config|
     sudo add-apt-repository "deb http://pkg.jenkins-ci.org/debian-stable binary/"
 
     sudo apt-get update
-    sudo apt-get install -y openjdk-7-jdk
+    sudo apt-get install -y openjdk-7-jdk git
     sudo apt-get install -y jenkins
 
     wget --quiet -O /home/vagrant/jenkins-cli.jar http://127.0.0.1:8080/jnlpJars/jenkins-cli.jar
     java -jar /home/vagrant/jenkins-cli.jar -s http://127.0.0.1:8080/ install-plugin seed
+    java -jar /home/vagrant/jenkins-cli.jar -s http://127.0.0.1:8080/ install-plugin git
     java -jar /home/vagrant/jenkins-cli.jar -s http://127.0.0.1:8080/ install-plugin envinject -restart
   SHELL
 end
